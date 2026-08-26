@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rose & Velora | The Essence of Pure Passion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body class="bg-pitch-black text-warm-beige overflow-x-hidden selection:bg-ruby-red selection:text-white">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 px-6 md:px-12 py-5 flex justify-between items-center bg-pitch-black/80 backdrop-blur-lg border-b border-white/10 transition-all duration-300">
+      <a href="#" class="text-xl md:text-2xl font-serif tracking-widest text-white hover:text-brushed-gold transition-colors font-medium">Rose & Velora</a>
+      
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-10 text-xs tracking-[0.2em] uppercase font-medium">
+        <a href="#collection" class="hover:text-brushed-gold transition-colors duration-300">Collection</a>
+        <a href="#story" class="hover:text-brushed-gold transition-colors duration-300">Cinematic Story</a>
+        <a href="/product/?id=1" class="hover:text-brushed-gold transition-colors duration-300">Signature Bottle</a>
+      </div>
+      
+      <div class="flex items-center space-x-6">
+        <a href="#" class="text-xs uppercase tracking-[0.2em] text-brushed-gold hover:text-white transition-colors">Bag (0)</a>
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none p-1">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-menu" class="fixed inset-0 bg-pitch-black/95 z-40 flex flex-col items-center justify-center space-y-8 text-lg font-serif tracking-widest text-white hidden md:hidden">
+      <button id="close-menu-btn" class="absolute top-6 right-6 text-gray-400 hover:text-white">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+      <a href="#collection" class="mobile-nav-link hover:text-brushed-gold">Collection</a>
+      <a href="#story" class="mobile-nav-link hover:text-brushed-gold">Cinematic Story</a>
+      <a href="/product/?id=1" class="mobile-nav-link hover:text-brushed-gold">Signature Ruby</a>
+    </div>
+
+    <!-- Full-Screen Cinematic Intro Splash Screen (Fades out after ~3.5 seconds) -->
+    <div id="intro-splash" class="fixed inset-0 z-[100] bg-pitch-black flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <video autoplay muted playsinline loop class="w-full h-full object-cover filter brightness-40 contrast-125">
+          <source src="https://ynn787qihi.ufs.sh/f/Qj6TSP5Fj9mqWqsxGhQnh5xzGePsmA1LwXpv7Mo4iuf2y6VE" type="video/mp4" />
+        </video>
+        <div class="absolute inset-0 bg-gradient-to-t from-pitch-black via-pitch-black/30 to-pitch-black/80"></div>
+        <div class="absolute inset-0 bg-ruby-red/20 mix-blend-color-dodge"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-xl">
+        <span class="text-brushed-gold text-xs uppercase tracking-[0.4em] mb-4 block font-medium animate-pulse">Haute Parfumerie Paris</span>
+        <h1 class="text-4xl sm:text-6xl font-serif text-white mb-6 tracking-widest leading-tight">Rose & Velora</h1>
+        <p class="text-xs sm:text-sm text-gray-300 font-light tracking-[0.2em] uppercase mb-8">A Symphony of Velvet Rose & Rare Amber</p>
+        <button id="skip-intro-btn" class="px-8 py-3.5 border border-brushed-gold/60 text-brushed-gold uppercase tracking-[0.25em] text-[11px] font-semibold hover:bg-brushed-gold hover:text-pitch-black transition-all rounded shadow-[0_0_20px_rgba(212,175,55,0.2)]">
+          Enter Experience &rarr;
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Hero Section (Features Model in Crimson Gown) -->
+    <header id="hero" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img src="https://ynn787qihi.ufs.sh/f/Qj6TSP5Fj9mqNnzSBWQedDFtJQenCj36Xcw85KUaBsxM4ZEz" alt="Rose & Velora Model" class="w-full h-full object-cover object-center scale-105 transform hero-bg">
+        <div class="absolute inset-0 bg-gradient-to-t from-pitch-black via-pitch-black/50 to-pitch-black/30"></div>
+        <div class="absolute inset-0 bg-ruby-red/10 mix-blend-overlay"></div>
+      </div>
+      
+      <!-- Content -->
+      <div class="relative z-10 text-center px-6 max-w-5xl mt-16">
+        <span class="inline-block text-brushed-gold text-xs uppercase tracking-[0.3em] mb-4 font-medium">Haute Parfumerie Paris</span>
+        <h1 class="text-4xl sm:text-6xl md:text-8xl font-serif text-white mb-6 hero-text opacity-0 leading-tight">
+          The Essence of<br/><span class="text-ruby-red text-glow italic font-normal">Pure Passion</span>
+        </h1>
+        <p class="text-base sm:text-xl md:text-2xl font-light mb-10 tracking-wide text-gray-300 hero-subtext opacity-0 max-w-2xl mx-auto">
+          A Symphony of Velvet Rose & Rare Amber
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-5 hero-ctas opacity-0">
+          <a href="#collection" class="w-full sm:w-auto px-8 py-4 bg-brushed-gold text-pitch-black uppercase tracking-[0.2em] text-xs font-semibold hover:bg-white transition-all duration-500 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+            Explore Collection
+          </a>
+          <a href="#story" class="w-full sm:w-auto px-8 py-4 border border-brushed-gold/60 text-brushed-gold uppercase tracking-[0.2em] text-xs font-semibold hover:bg-brushed-gold hover:text-pitch-black transition-all duration-500">
+            Discover The Story
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sequential Product Showcase (Fragrance 01) -->
+    <section id="collection" class="product-section relative min-h-screen flex items-center bg-pitch-black border-t border-white/5 py-20 md:py-28">
+      <div class="container mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+        <!-- Interactive 360 Image Container (Left) -->
+        <div class="relative h-[60vh] sm:h-[70vh] md:h-[80vh] group overflow-hidden rounded-lg product-img-wrapper cursor-grab active:cursor-grabbing border border-white/5 bg-gradient-to-b from-white/5 to-transparent flex items-center justify-center" data-product-id="1">
+          <img src="https://ynn787qihi.ufs.sh/f/Qj6TSP5Fj9mqq0B1TId3Ik5L6ZKWgbE7ncRydV09rSjPDQo4" alt="Signature Ruby" class="max-h-[85%] max-w-[85%] object-contain product-bottle transition-transform duration-150 ease-out select-none">
+          <div class="absolute inset-0 bg-ruby-red/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+          <!-- 360 Scrub Badge -->
+          <div class="absolute bottom-4 left-4 bg-pitch-black/80 backdrop-blur-md px-3 py-1.5 rounded border border-white/10 text-[10px] text-brushed-gold uppercase tracking-[0.2em] pointer-events-none flex items-center space-x-2">
+            <svg class="w-3.5 h-3.5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+            <span>Drag to rotate 360°</span>
+          </div>
+        </div>
+        
+        <!-- Text details (Right) -->
+        <div class="product-info flex flex-col justify-center space-y-6 max-w-lg">
+          <div class="flex items-center justify-between">
+            <span class="text-brushed-gold text-xs tracking-[0.25em] uppercase font-semibold">Fragrance 01</span>
+            <span class="text-2xl font-serif text-white font-medium">$380 <span class="text-xs font-sans text-gray-400 font-normal">/ 100ml</span></span>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-serif text-white">Signature Ruby</h2>
+          <p class="text-gray-400 font-light leading-relaxed text-sm sm:text-base">
+            The flagship masterpiece of our perfume house. A passionate symphony opening with Bulgarian Damask rose, evolving into dark velvet oud and midnight jasmine.
+          </p>
+          
+          <div class="pt-4 border-t border-white/10">
+            <h4 class="uppercase tracking-[0.2em] text-[11px] mb-3 text-gray-500 font-medium">Olfactory Pyramid</h4>
+            <div class="grid grid-cols-3 gap-2 text-xs sm:text-sm">
+              <div class="bg-white/5 p-2.5 rounded border border-white/5">
+                <span class="text-brushed-gold block text-[10px] uppercase tracking-wider mb-1">Top</span>
+                <span class="text-white font-light">Damask Rose, Pink Pepper</span>
+              </div>
+              <div class="bg-white/5 p-2.5 rounded border border-white/5">
+                <span class="text-brushed-gold block text-[10px] uppercase tracking-wider mb-1">Heart</span>
+                <span class="text-white font-light">Velvet Oud, Jasmine</span>
+              </div>
+              <div class="bg-white/5 p-2.5 rounded border border-white/5">
+                <span class="text-brushed-gold block text-[10px] uppercase tracking-wider mb-1">Base</span>
+                <span class="text-white font-light">Rare Amber, Vanilla</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <div class="flex space-x-2 border border-white/20 p-1 rounded">
+              <button class="px-4 py-2 bg-brushed-gold text-pitch-black font-semibold text-xs transition-colors">50ml - $285</button>
+              <button class="px-4 py-2 text-gray-300 hover:text-white text-xs transition-colors">100ml - $380</button>
+            </div>
+            <a href="/product/?id=1" class="px-6 py-3 bg-ruby-red hover:bg-ruby-red/80 text-white uppercase text-xs tracking-[0.2em] font-semibold transition-all rounded shadow-[0_0_15px_rgba(155,17,30,0.4)]">
+              Explore Fragrance
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional dynamic 10 products generated via main.js -->
+    <div id="additional-products-container"></div>
+
+    <!-- Footer -->
+    <footer class="bg-pitch-black border-t border-white/10 py-16 px-8 text-center text-gray-500 text-sm">
+      <div class="font-serif text-3xl text-white mb-4 tracking-widest">Rose & Velora</div>
+      <p class="text-xs uppercase tracking-widest text-gray-600 mb-6">Haute Parfumerie &bull; Paris &bull; Dubai &bull; New York</p>
+      <p class="text-xs">&copy; 2026 Rose & Velora. All Rights Reserved.</p>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details | Rose & Velora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body class="bg-pitch-black text-warm-beige min-h-screen flex flex-col overflow-x-hidden selection:bg-ruby-red selection:text-white">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 px-6 md:px-12 py-5 flex justify-between items-center bg-pitch-black/80 backdrop-blur-lg border-b border-white/10">
+      <a href="/" class="text-xl md:text-2xl font-serif tracking-widest text-white hover:text-brushed-gold transition-colors font-medium">Rose & Velora</a>
+      <div class="hidden md:flex space-x-10 text-xs tracking-[0.2em] uppercase font-medium">
+        <a href="/#collection" class="hover:text-brushed-gold transition-colors duration-300">Collection</a>
+        <a href="/#story" class="hover:text-brushed-gold transition-colors duration-300">Cinematic Story</a>
+      </div>
+      <div>
+        <a href="#" class="text-xs uppercase tracking-[0.2em] text-brushed-gold hover:text-white transition-colors">Bag (0)</a>
+      </div>
+    </nav>
+
+    <!-- Product Area -->
+    <main class="flex-grow pt-20 md:pt-0">
+      <div class="min-h-screen flex flex-col md:flex-row">
+        <!-- Interactive 360 Drag Image Area -->
+        <div class="w-full md:w-1/2 h-[55vh] md:h-screen relative bg-gradient-to-b from-white/5 via-pitch-black to-pitch-black border-r border-white/10 flex items-center justify-center group overflow-hidden cursor-grab active:cursor-grabbing select-none" id="interactive-img-container">
+           <img id="product-main-img" src="https://ynn787qihi.ufs.sh/f/Qj6TSP5Fj9mqq0B1TId3Ik5L6ZKWgbE7ncRydV09rSjPDQo4" alt="Fragrance Bottle" class="max-h-[75%] max-w-[75%] object-contain transition-transform duration-100 ease-out z-10 select-none" />
+           
+           <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-pitch-black/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/15 text-xs tracking-[0.2em] text-brushed-gold uppercase flex items-center space-x-3 pointer-events-none shadow-lg">
+             <svg class="w-4 h-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+             <span>Drag left or right to rotate 360°</span>
+           </div>
+           
+           <!-- Glowing ambient background -->
+           <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-ruby-red/20 rounded-full blur-3xl z-0 pointer-events-none"></div>
+        </div>
+
+        <!-- Details Area -->
+        <div class="w-full md:w-1/2 flex flex-col justify-center px-6 sm:px-12 md:px-16 py-12 md:py-24">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-brushed-gold text-xs tracking-[0.3em] uppercase font-semibold" id="product-subtitle">Fragrance 01</span>
+            <span class="text-xs uppercase tracking-widest text-gray-400 border border-white/10 px-3 py-1 rounded">In Stock</span>
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif text-white mb-4" id="product-title">Signature Ruby</h1>
+          
+          <div class="text-3xl font-serif text-white mb-6" id="product-price">$380 <span class="text-xs font-sans text-gray-400 font-normal">USD</span></div>
+          
+          <p class="text-gray-300 font-light leading-relaxed mb-8 text-sm sm:text-base" id="product-desc">
+            The cornerstone of our haute parfumerie collection. A passionate blend opening with vibrant Bulgarian Damask rose, settling into a deep, velvety heart of rare oud and midnight jasmine.
+          </p>
+
+          <div class="space-y-8 mb-10">
+            <!-- Olfactory Pyramid -->
+            <div>
+              <h3 class="uppercase tracking-[0.2em] text-xs mb-4 text-gray-400 border-b border-white/10 pb-2 font-medium">Olfactory Pyramid</h3>
+              <div class="grid grid-cols-3 gap-3 text-xs sm:text-sm">
+                <div class="bg-white/5 p-3 rounded border border-white/5">
+                  <div class="text-brushed-gold text-[10px] uppercase tracking-wider mb-1">Top Notes</div>
+                  <div class="text-white font-light" id="pyramid-top">Damask Rose, Pink Pepper</div>
+                </div>
+                <div class="bg-white/5 p-3 rounded border border-white/5">
+                  <div class="text-brushed-gold text-[10px] uppercase tracking-wider mb-1">Heart Notes</div>
+                  <div class="text-white font-light" id="pyramid-heart">Velvet Oud, Jasmine</div>
+                </div>
+                <div class="bg-white/5 p-3 rounded border border-white/5">
+                  <div class="text-brushed-gold text-[10px] uppercase tracking-wider mb-1">Base Notes</div>
+                  <div class="text-white font-light" id="pyramid-base">Rare Amber, Vanilla</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Size Selection -->
+            <div>
+              <h3 class="uppercase tracking-[0.2em] text-xs mb-4 text-gray-400 border-b border-white/10 pb-2 font-medium">Select Size</h3>
+              <div class="flex space-x-4">
+                <label class="cursor-pointer">
+                  <input type="radio" name="size" class="peer sr-only" id="size-50" />
+                  <div class="px-6 py-3 border border-white/20 text-gray-400 peer-checked:border-brushed-gold peer-checked:bg-brushed-gold/10 peer-checked:text-white transition-all text-xs font-semibold rounded" id="btn-size-50">50ml - $285</div>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="size" class="peer sr-only" id="size-100" checked />
+                  <div class="px-6 py-3 border border-white/20 text-gray-400 peer-checked:border-brushed-gold peer-checked:bg-brushed-gold/10 peer-checked:text-white transition-all text-xs font-semibold rounded" id="btn-size-100">100ml - $380</div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex space-x-4">
+            <button class="flex-1 bg-ruby-red hover:bg-ruby-red/90 text-white uppercase tracking-[0.2em] text-xs font-semibold py-4 transition-all rounded shadow-[0_0_20px_rgba(155,17,30,0.5)]">
+              Add to Bag
+            </button>
+            <button class="px-6 border border-white/20 text-white hover:border-brushed-gold hover:text-brushed-gold transition-colors rounded">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+            </button>
+          </div>
+          
+        </div>
+      </div>
+    </main>
+
+    <script type="module">
+      import gsap from 'gsap';
+      
+      // Interactive Drag to Rotate 360 Image Logic
+      const container = document.getElementById('interactive-img-container');
+      const img = document.getElementById('product-main-img');
+      
+      let isDragging = false;
+      let startX = 0;
+      let currentRotY = 0;
+      let targetRotY = 0;
+
+      if(container && img) {
+        container.addEventListener('mousedown', (e) => {
+          isDragging = true;
+          startX = e.clientX;
+        });
+
+        window.addEventListener('mousemove', (e) => {
+          if (!isDragging) {
+            const rect = container.getBoundingClientRect();
+            if (e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom) {
+              const relX = (e.clientX - rect.left) / rect.width - 0.5;
+              const relY = (e.clientY - rect.top) / rect.height - 0.5;
+              gsap.to(img, {
+                rotationY: currentRotY + relX * 30,
+                rotationX: -relY * 20,
+                duration: 0.3
+              });
+            }
+            return;
+          }
+          const deltaX = e.clientX - startX;
+          targetRotY = currentRotY + deltaX * 0.8;
+          gsap.to(img, { rotationY: targetRotY, duration: 0.1 });
+        });
+
+        window.addEventListener('mouseup', () => {
+          if (isDragging) {
+            isDragging = false;
+            currentRotY = targetRotY;
+            gsap.to(img, { rotationX: 0, duration: 0.5 });
+          }
+        });
+
+        // Touch events
+        container.addEventListener('touchstart', (e) => {
+          if (e.touches.length === 1) {
+            isDragging = true;
+            startX = e.touches[0].clientX;
+          }
+        }, { passive: true });
+
+        container.addEventListener('touchmove', (e) => {
+          if (!isDragging || e.touches.length !== 1) return;
+          const deltaX = e.touches[0].clientX - startX;
+          targetRotY = currentRotY + deltaX * 1.2;
+          gsap.to(img, { rotationY: targetRotY, duration: 0.1 });
+        }, { passive: true });
+
+        container.addEventListener('touchend', () => {
+          if (isDragging) {
+            isDragging = false;
+            currentRotY = targetRotY;
+          }
+        });
+      }
+
+      // Products dataset with details
+      const products = [
+        { id: 1, name: "Signature Ruby", price50: 285, price100: 380, top: "Damask Rose, Pink Pepper", heart: "Velvet Oud, Jasmine", base: "Rare Amber, Vanilla", desc: "The flagship masterpiece of our perfume house. A passionate symphony opening with Bulgarian Damask rose, evolving into dark velvet oud.", img: "https://ynn787qihi.ufs.sh/f/Qj6TSP5Fj9mqq0B1TId3Ik5L6ZKWgbE7ncRydV09rSjPDQo4" },
+        { id: 2, name: "Midnight Oud", price50: 310, price100: 440, top: "Smoky Incense, Cardamom", heart: "Cambodian Oud, Leather", base: "Dark Amber, Cedarwood", desc: "Deep and enigmatic, Midnight Oud captures the nocturnal majesty of ancient oriental forests.", img: "https://ynn787qihi.ufs.sh/f/Qj6TSP5Fj9mqecHO4FvEhmGQqBUXTV9P4u0sjSRDfwkgcarp" },
+        { id: 3, name: "Velvet Amber", price50: 295, price100: 410, top: "Bergamot, Labdanum", heart: "Golden Amber, Myrrh", base: "Bourbon Vanilla, Tonka", desc: "A velvety warm embrace of rich amber resin and aromatic spices, wrapped in vanilla silk.", img: "https://ynn787qihi.ufs.sh/f/Qj6TSP5Fj9mq2n7yZbBSqMNBOhv50Ha9gowcPdZTKJepiyk8" },
+        { id: 4, name: "Crimson Rose", price50: 340, price100: 490, top: "Bulgarian Rose, Saffron", heart: "May Rose, Geranium", base: "Patchouli, Musk", desc: "Sensual crimson roses harvested at peak bloom, infused with precious golden saffron.", img: "https://ynn787qihi.ufs.sh/f/Qj6TSP5Fj9mqb9d76Z1imoPfCY9KagJrVnOFAtp57DGERiLh" },
+        { id: 5, name: "Golden Bloom", price50: 325, price100: 460, top: "Neroli, Mandarin", heart: "Ylang-Ylang, Tuberose", base: "Sandalwood, White Honey", desc: "A radiant solar floral accord bursting with opulent white blossoms and golden nectar.", img: "https://ynn787qihi.ufs.sh/f/Qj6TSP5Fj9mqGqzXTyF7xFCNHRI5vudXn82csPlVLakjZtQr" },
+        { id: 6, name: "Mystic Cedar", price50: 285, price100: 395, top: "Atlas Cedar, Cypress", heart: "Vetiver, Black Pepper", base: "Iso E Super, Oakmoss", desc: "Vibrant woody notes grounded in earthy vetiver and majestic Atlas cedar bark.", img: "https://ynn787qihi.ufs.sh/f/Qj6TSP5Fj9mqnvgreS7bwUGEWuKTDMolfsIS4qC26ByLF91t" },
+        { id: 7, name: "Scarlet Musk", price50: 350, price100: 510, top: "Red Currant, Star Anise", heart: "Scarlet Iris, Cashmere Wood", base: "Civil Musk, Ambrette", desc: "An alluring magnetic trail of scarlet iris petals fused with velvety cashmere musk.", img: "https://ynn787qihi.ufs.sh/f/Qj6TSP5Fj9mqb9Ch6FAimoPfCY9KagJrVnOFAtp57DGERiLh" },
+        { id: 8, name: "Royal Patchouli", price50: 330, price100: 475, top: "Indonesian Patchouli, Clove", heart: "Orris Root, Dark Cocoa", base: "Benzoin, Guiac Wood", desc: "Regal patchouli leaves distilled with gourmet dark cocoa and smoky guaiac wood.", img: "https://ynn787qihi.ufs.sh/f/Qj6TSP5Fj9mq5Ikj801o5qui7rMpZSmhAcv2tfQ49aL0lRTP" },
+        { id: 9, name: "Sandalwood Noir", price50: 360, price100: 520, top: "Mysore Sandalwood, Cardamom", heart: "Papyrus, Violet Leaf", base: "Leather, White Amber", desc: "Precious Mysore sandalwood enveloped in dark leather accords and aromatic papyrus.", img: "https://ynn787qihi.ufs.sh/f/Qj6TSP5Fj9mq8cQjDFDs0GbPji7192ACswTmfQ8uU6FyIahJ" },
+        { id: 10, name: "Luminous Peony", price50: 290, price100: 420, top: "White Peony, Pear Nectar", heart: "Magnolia, Freesia", base: "White Musk, Cedar", desc: "Fresh dew-kissed white peonies elevated by crisp pear nectar and luminous musk.", img: "https://ynn787qihi.ufs.sh/f/Qj6TSP5Fj9mq971u8zGXFYNPRzr4S6yJE8ua0doDZBnGAhce" },
+        { id: 11, name: "Eternal Saffron", price50: 375, price100: 540, top: "Persian Saffron, Blood Orange", heart: "Jasmine Sambac, Fire Spice", base: "Agarwood, Warm Amber", desc: "The ultimate luxury elixir featuring hand-harvested Persian saffron threads.", img: "https://ynn787qihi.ufs.sh/f/Qj6TSP5Fj9mqE3f8FZqcLgPMhz6yijV529IZFNkxYvU3q0ue" }
+      ];
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get('id') || 1;
+      const prod = products.find(p => p.id == id) || products[0];
+
+      document.getElementById('product-title').textContent = prod.name;
+      document.getElementById('product-subtitle').textContent = `Fragrance ${prod.id.toString().padStart(2, '0')}`;
+      document.getElementById('product-main-img').src = prod.img;
+      document.getElementById('product-price').innerHTML = `$${prod.price100} <span class="text-xs font-sans text-gray-400 font-normal">USD</span>`;
+      document.getElementById('product-desc').textContent = prod.desc;
+      
+      document.getElementById('pyramid-top').textContent = prod.top;
+      document.getElementById('pyramid-heart').textContent = prod.heart;
+      document.getElementById('pyramid-base').textContent = prod.base;
+
+      document.getElementById('btn-size-50').textContent = `50ml - $${prod.price50}`;
+      document.getElementById('btn-size-100').textContent = `100ml - $${prod.price100}`;
+
+      document.getElementById('size-50').addEventListener('change', () => {
+        document.getElementById('product-price').innerHTML = `$${prod.price50} <span class="text-xs font-sans text-gray-400 font-normal">USD</span>`;
+      });
+      document.getElementById('size-100').addEventListener('change', () => {
+        document.getElementById('product-price').innerHTML = `$${prod.price100} <span class="text-xs font-sans text-gray-400 font-normal">USD</span>`;
+      });
+    </script>
+  </body>
+</html>
